@@ -1,58 +1,120 @@
-console.log("####### EXERCICE 1 #######");
-var items =  new Array();
-console.log(items);
-items = [];
-console.log(items);
-items = ["a","b"];
-console.log(items);
-console.log("####### EXERCICE 2 #######");
-var items = ["premier élément", "deuxième élément","troisième élément","quatrième élément"];
-console.log(items);
-console.log(items[1]);
-console.log(items[3]);
-console.log(items[0]);
-console.log("####### EXERCICE 3 #######");
-var player = ["John", "Doe", 34, true];
-console.log(player);
-console.log(player[0]);
-console.log(player[1]);
-console.log(player[0] + " " + player[1]);
-console.log("Age du joueur avant modification : " + player[2]);
-player[2] = 40;
-console.log("Age du joueur après modification : " + player[2]);
-console.log(player[3]);
-console.log("####### EXERCICE 4 #######");
-var player = {
-    firstname : "John",
-    lastname : "Doe",
-    age : 34,
-    isadult : true
+console.log("####### Exercice 1 Partie 1");
+for(var i = 1; i <= 5; i++) {
+    var x = "";
+    for(j = 1; j<=i ; j++) {
+        x += "*"
+    }
+    console.log(x);
 }
-console.log(player);
-console.log(player["firstname"]);
-console.log(player["lastname"]);
-console.log(player["firstname"] + " " + player["lastname"]);
-console.log("Age avant modification : " + player["age"]);
-player["age"] = 40
-console.log("Age Après modification : " + player["age"]);
-console.log("Adulte : " + player["isadult"]);
-console.log("####### EXERCICE 5 #######");
-var car = {
-    type : "Clio",
-    brand : "Renault",
-    date : 2006,
-    color : "Orange",
-    passengers : ["Mike","Claire","Anna","Louis"]
+// Autre méthode
+var etoile = "";
+for(var i = 1; i <= 5; i++) {
+    etoile += "*"
+    console.log(etoile);
 }
-console.log(car);
-console.log("Une " + car["brand"] + " de couleur " + car["color"] + ", modèle " + car["date"] + " a été aperçue à son bord 4 passagers");
-console.log(car["passengers"][0]);
-console.log("4 individus ont été aperçus à son bord : " + car["passengers"][0] + "," + car["passengers"][1] + "," + car["passengers"][2] + "," + car["passengers"][3]);
-console.log("####### EXERCICE 6 #######");
-var a = 14, b = 38;
-var product = [] ;
-console.log("A : " + a + " B : " + b + " Tableau : " + product);
-product[0] = a;
-product[1] = b;
-product[7] = 50;
-console.log(product);
+
+console.log("####### Exercice 2 Partie 1");
+
+var mess = ""
+for (var i = 1; i <= 100; i++){
+    mess = i; 
+    if(i%3 === 0 && i%5 === 0) {
+        mess += " : FIZZBUZZ";
+    }
+    else if (i%3 === 0) {
+        mess += " : FIZZ"
+    }
+    else if (i%5 === 0) { 
+        mess += " : BUZZ"
+    }
+    console.log(mess);
+}
+console.clear();
+console.log("####### Exercice 1 Partie 2");
+
+var x = "\n";
+for(var i = 1; i <= 8; i++) {
+    for(j = 1; j <= 16 ; j++) {
+        if ((i+j) %2 === 0) {
+            x += " "
+        } else {
+            x += "#"
+        }
+    }
+    x += "\n";
+}
+console.log(x);
+
+console.log("####### Exercice 2 Partie 2");
+
+for(var i = 1; i <= 4; i++) {
+    for(j = 1; j <= 4 ; j++) {
+        if( i === j){
+            console.log("1")
+        } else {
+            console.log("0")
+        }
+    }
+    console.log("*------------")
+}
+
+console.log("####### Exercice 3 Partie 2");
+
+function pair(nombres=false){
+   if (nombres) {
+        return (Number.parseInt(nombres)%2 === 0)
+    }
+}
+// console.log(pair(6.66))
+
+var nombre = 5.356;
+console.log(pair(nombre));
+if (pair(nombre)) {
+   console.log(Number.parseInt(nombre));
+}
+
+console.log("####### Exercice 4 Partie 3");
+
+function factorielle (nombre) {
+    if (!Number.isInteger(nombre)) {
+        return "The number is not integer"
+    }
+    var calcul = 1;
+    for (var i = 2; i <= nombre; i++){
+        calcul = calcul * i;
+    }
+    return calcul;
+}
+var nombre = 5;
+console.log("Factorielle de " + nombre + " est : " + factorielle(nombre))
+
+
+console.log("####### Exercice 5 Partie 3");
+
+function tiret(chaine) {
+    strReplace = "";
+    for(i = 0; i<= chaine.length - 1; i++){
+        if (chaine[i] === "-") {
+            strReplace += "_"
+        }
+        else {
+            strReplace += chaine[i]
+        }
+    }
+    return strReplace
+}
+
+console.log(tiret("Samir-ben-Abdessalem"));
+
+console.log("####### Exercice 6 Partie 3");
+
+var course = [
+    "Lait",
+    "Pain",
+    "Eau",
+    "Patate",
+    "Chocolat"
+]
+console.log(course[0]);
+console.log(course[course.length - 1]);
+console.log(course[(course.length - 1)/2]);
